@@ -1,4 +1,19 @@
-h1,
+/* Universal selector */
+
+/* * {
+  border-top: 10px solid red;
+} */
+
+/* Inheritance and the Universal Selector */
+
+body {
+  font-family: sans-serif;
+  color: #444;
+
+  border-top: 10px solid #1098ad;
+}
+
+/* h1,
 h2,
 h3,
 h4,
@@ -6,7 +21,7 @@ p,
 li {
   font-family: sans-serif;
   color: #444;
-}
+} */
 
 h1,
 h2,
@@ -37,7 +52,6 @@ h4 {
 
 p {
   font-size: 22px;
-
   line-height: 1.5;
 }
 
@@ -87,4 +101,63 @@ aside {
 
 /* body {
   background-color: olive;
+} */
+
+/* Pseudo-classes */
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+li:nth-child(even) {
+  color: red;
+}
+
+/* Styling links */
+/* Rule: LVHA */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  text-decoration: underline orangered dotted;
+}
+
+a:active {
+  font-style: italic;
+}
+
+/* Resolving conflicts */
+/* #copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green !important;
+} */
+
+/* nav a:link,
+nav p {
+  font-size: 18px;
+} */
+
+/* nav {
+  font-size: 18px;
 } */
