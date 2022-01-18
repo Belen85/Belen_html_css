@@ -1,24 +1,16 @@
-/* Universal selector */
-
-/* * {
-  border-top: 10px solid red;
-} */
-
-/* Inheritance and the Universal Selector */
-
-/* This global reset is very common and this is very easy to overwrite  */
 * {
+  /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
 }
 
-/* PAGE SECTIONS  */
+/* PAGE SECTIONS */
 body {
-  font-family: sans-serif;
   color: #444;
+  font-family: sans-serif;
 
   border-top: 10px solid #1098ad;
-  /* position: relative; */
+  position: relative;
 }
 
 .container {
@@ -30,18 +22,26 @@ body {
 
 .main-header {
   background-color: #f7f7f7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
   padding: 20px 40px;
   margin-bottom: 60px;
   /* height: 80px; */
 }
 
-.post-header {
-  margin-bottom: 40px;
-  position: relative;
+nav {
+  font-size: 18px;
+  /* text-align: center; */
 }
 
 article {
   margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+  /* position: relative; */
 }
 
 aside {
@@ -53,16 +53,6 @@ aside {
   padding: 50px 0;
   width: 500px;
 }
-
-/* h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
-  color: #444;
-} */
 
 /* SMALLER ELEMENTS */
 h1,
@@ -80,8 +70,6 @@ h1 {
 h2 {
   font-size: 40px;
   margin-bottom: 30px;
-  /* background-color: darksalmon; */
-  position: relative;
 }
 
 h3 {
@@ -92,7 +80,6 @@ h3 {
 
 h4 {
   font-size: 20px;
-
   text-transform: uppercase;
   text-align: center;
 }
@@ -111,14 +98,14 @@ ol {
 
 li {
   font-size: 20px;
-  margin-bottom: 20px;
-
+  margin-bottom: 10px;
   /* display: inline; */
 }
 
 li:last-child {
   margin-bottom: 0;
 }
+
 /* footer p {
   font-size: 16px;
 } */
@@ -149,11 +136,13 @@ li:last-child {
   list-style: none;
 }
 
-/* body {
-  background-color: olive;
-} */
+body {
+  /* background-color: orangered; */
+}
 
-/* Pseudo-classes */
+/* .first-li {
+  font-weight: bold;
+} */
 
 li:first-child {
   font-weight: bold;
@@ -164,26 +153,95 @@ li:last-child {
 }
 
 li:nth-child(even) {
+  /* color: red; */
+}
+
+/* Misconception: this won't work! */
+article p:first-child {
   color: red;
 }
 
 /* Styling links */
-/* Rule: LVHA */
 a:link {
   color: #1098ad;
   text-decoration: none;
 }
 
 a:visited {
+  /* color: #777; */
   color: #1098ad;
 }
 
 a:hover {
-  text-decoration: underline orangered dotted;
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
 }
 
 a:active {
+  background-color: black;
   font-style: italic;
+}
+/* LVHA */
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  /* top: 50px;
+  left: 50px; */
+  bottom: 50px;
+  right: 50px;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+h3 + p::first-line {
+  /* color: red; */
+}
+
+h2 {
+  /* background-color: orange; */
+  position: relative;
+}
+
+h2::before {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
 }
 
 /* Resolving conflicts */
@@ -207,79 +265,3 @@ footer p {
 nav p {
   font-size: 18px;
 } */
-
-/* nav {
-  font-size: 18px;
-} */
-
-.post-image {
-  width: 100%;
-  height: auto;
-  /* margin: 100px; */
-}
-
-nav a:link {
-  /* background-color: orangered;
-  margin: 20px;
-  padding: 20px;
-
-  display: block; */
-  margin-right: 30px;
-  margin-top: 10px;
-  display: inline-block;
-  color: red;
-}
-
-/* nav a:visited {
-  color: red;
-}
-
-nav a:hover {
-  color: green;
-} */
-
-nav a:link:last-child {
-  margin-right: 0;
-}
-
-button {
-  font-size: 22px;
-  padding: 20px;
-  cursor: pointer;
-
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-button span {
-  color: red;
-}
-
-h1::first-letter {
-  font-style: normal;
-  margin-right: 5px;
-}
-
-/* h2::first-letter {
-  font-size: 80px;
-} */
-
-/* Select the paragraphs that come after the h3 and put the first line in red */
-h3 + p::first-line {
-  color: red;
-}
-
-/* After pseudo element */
-
-h2::after {
-  content: "TOP";
-  background-color: #ffe70e;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 5px 10px;
-  position: absolute;
-  top: -15px;
-  right: -25px;
-}
