@@ -48,20 +48,55 @@
         /* justify-content: center; */
         /* justify-content: space-between; */
         justify-content: flex-start;
-        gap: 30px;
+        /* gap: 30px; */
       }
+
+      .el {
+        /*
+        DEFAULTS
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto; */
+
+        /* We use flex basis instead of width */
+        /* It is like a recommendation we say to the browser but the browser will then, based on the content, figure out the optimal width  */
+        /* In this example they are all 200px width because in all the divs the
+        content is lower that those 200px  */
+        /* flex-basis: 200px; */
+        /* If there is not enough space in the continer for example if we set a size of 250px
+        then the browser will adapt the size of all divs to an optimal size and this is thanks to the property flex-shrink that 
+        it is set to 1 */
+        /* flex-basis: 250px; */
+        flex-shrink: 0;
+        /* But setting flex-shrink to zero it is not always advisible but in some situations is necessary 
+        So essentially what flex shrink does is to determine whether flexbox is allowed to 
+        shrink element if necessary or not */
+        /* On the contrary, flex-grow determines whether elements are allowed to grow as large as they can or 
+        not */
+        /* This makes sence if we turn off the flex-basis 
+        with flex-grow set to 1 all the remaining space that we will have with
+        flex-grow set to zero is evenly divided by all the remaining elements */
+        flex-grow: 1;
+        /* With flex: 1; we end up with the same result */
+        /* flex: 1; */
+      }
+
       .el--1 {
         align-self: flex-start;
+        /* Here all the remaining space will be added up to the first element  */
+        /* flex-grow: 1; */
+        /* With flex-grow set to 2 the element will get double of the available empty space than these other 5 ones */
+        /* flex-grow: 2; */
         /* order: 2; */
       }
 
       .el--5 {
-        align-self: stretch;
-        order: 1;
+        align-self: flex-start;
+        /* order: 1; */
       }
 
       .el--6 {
-        order: -1;
+        /* order: -1; */
       }
     </style>
   </head>
