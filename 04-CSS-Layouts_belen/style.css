@@ -395,3 +395,10 @@ footer {
   background-color: #1098ad;
   grid-column: 1/-1;
 }
+
+/* TEST */
+.test {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+}

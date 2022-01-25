@@ -41,8 +41,9 @@
 
         /* CSS GRID */
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         /* grid-template-columns: 1fr 1fr 1fr auto; */
-        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-columns: repeat(4, 1fr); */
         /* grid-template-rows: 300px 200px; */
         grid-template-rows: 1fr 1fr;
         /* height: 500px; */
@@ -56,7 +57,7 @@
 
       .el--8 {
         grid-column: 2/3;
-        grid-row: 1/3;
+        grid-row: 1/2;
       }
 
       .el--2 {
@@ -64,8 +65,8 @@
         /* grid-column: 1/2; */
         /* When we dont know how many column we have to span then
         we use this trick  */
-        grid-column: 1/-1;
-        grid-row: 2/3;
+        /* grid-column: 1/-1;
+        grid-row: 2/3; */
       }
 
       .el--6 {
