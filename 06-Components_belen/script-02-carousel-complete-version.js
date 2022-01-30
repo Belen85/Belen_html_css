@@ -19,6 +19,12 @@ console.log(maxSlide);
 //   (s, i) => (s.style.transform = `translate(${100 * (i - 1)}%, -50%)`)
 // );
 
+/**
+ *
+ * @param {Number} the slide number to be rendered
+ * @returns {side-efect} add the style transform to change the position of each slide based on the slide number
+ * @author Belen Rodriguez
+ */
 const goToSlide = function (slide) {
   slides.forEach(
     (s, i) => (s.style.transform = `translate(${100 * (i - slide)}%, -50%)`)
@@ -27,6 +33,11 @@ const goToSlide = function (slide) {
 
 goToSlide(0);
 
+/**
+ * @param {}
+ * @returns {side-efect} add to the dotContainer one button for each of the slides
+ * @author Belen Rodriguez
+ */
 const createDots = function () {
   slides.forEach((_, i) =>
     dotContainer.insertAdjacentHTML(
@@ -38,6 +49,12 @@ const createDots = function () {
 
 createDots();
 
+/**
+ *
+ * @param {slide} the slide number to be rendered
+ * @return {side-efect} remove the class dot--active for each dot and add the class dot-active to the current slide
+ * @author Belen Rodriguez
+ */
 const activateDot = function (slide) {
   document
     .querySelectorAll('.dot')
@@ -49,8 +66,12 @@ const activateDot = function (slide) {
 
 activateDot(0);
 
-//Nex slide
+//Next slide
 
+/**
+ * @param {}
+ * @returns {function} goToSlide and activateDot
+ */
 const nextSlide = function () {
   if (currentSlide === maxSlide - 1) {
     currentSlide = 0;
@@ -61,9 +82,15 @@ const nextSlide = function () {
   activateDot(currentSlide);
 };
 
+//Add eventListener to the btn Right
 btnRight.addEventListener('click', nextSlide);
 
 //Previous slide
+
+/**
+ * @param {}
+ * @returns {function} goToSlide and activateDot
+ */
 const prevSlide = function () {
   if (currentSlide === 0) {
     currentSlide = maxSlide - 1;
@@ -74,6 +101,7 @@ const prevSlide = function () {
   activateDot(currentSlide);
 };
 
+//Add eventListener to the btn Left
 btnLeft.addEventListener('click', prevSlide);
 
 dotContainer.addEventListener('click', function (e) {
