@@ -38,9 +38,31 @@ Default: 1
   box-sizing: border-box;
 }
 
+html {
+  /* font-size: 10px; */
+  /* 10px /16p = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1;
   font-weight: 400px;
   color: #555;
+}
+
+.test {
+  /* 
+  max-width -> when there is not more additional space to fit 
+  these 1000px here then the element should simply have the width 
+  of the parent container, in this case the body
+
+  container width (the body in this example=)> max-width -> element width = max width
+  container width (the body in this example) < max-width -> element width = 100% container element width
+
+  */
+  max-width: 1000px;
+  background-color: red;
+  padding: 100px;
 }
