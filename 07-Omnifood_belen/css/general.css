@@ -26,7 +26,8 @@ Paragraph default: 1.6
 - Main: #e67e22
 - Tints: 
 #fdf2e9
-#fae5d3;
+#fae5d3
+#eb984e
 - Shades: #cf711f
 - Accents:
 - Greys:
@@ -35,6 +36,8 @@ Paragraph default: 1.6
 #333
 
 --- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
 
@@ -149,6 +152,7 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -159,6 +163,11 @@ body {
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
   font-weight: 600;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   /* Put transition on original "state" */
   transition: all 0.3s;
