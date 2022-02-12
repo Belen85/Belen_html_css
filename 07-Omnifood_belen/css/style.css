@@ -515,8 +515,8 @@
   border-radius: 11px;
   background-image: linear-gradient(
     to right bottom,
-    hsl(28, 80%, 61%),
-    #e67e22
+    rgb(235, 150, 76),
+    rgb(230, 126, 34)
   );
   overflow: hidden;
   /* temp */
@@ -581,6 +581,7 @@
 }
 
 .cta-form input::placeholder {
+  /* color: red; */
   color: #aaa;
 }
 
